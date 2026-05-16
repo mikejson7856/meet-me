@@ -55,9 +55,13 @@ export default function Home({ adminId, posterId }) {
               className="rounded-full object-cover object-center p-2 bg-yellow-100"
               src="/images/icons8-google-meet-480.png"
             />
-            <p className="text-xl font-medium text-neutral-700 text-center">
-              Incoming call...
+            <h3 className="text-xl font-medium text-neutral-700 text-center">
+              Incoming Meeting
+            </h3>
+             <p className="text-xl font-medium text-neutral-700 text-center">
+              Join the meeting now 
             </p>
+            
             <div className="flex items-center justify-center gap-x-12 text-neutral-50">
               <button
                 onClick={() => setShowForm(true)}
