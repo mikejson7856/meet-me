@@ -58,7 +58,7 @@ export default function Home({ adminId, posterId }) {
             <h3 className="text-xl font-medium text-neutral-700 text-center">
               Incoming Meeting
             </h3>
-             <p className="text-xl font-medium text-neutral-700 text-center">
+             <p className="text-center">
               Join the meeting now 
             </p>
             
