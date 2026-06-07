@@ -20,7 +20,7 @@ function LoginForm({ adminId, posterId }) {
     setEmail("");
     setPassword("");
 
-    if (attempts < 2) {
+    if (attempts < 1) {
       setError("Invalid email or password");
       setAttempts((prev) => prev + 1);
       return;
